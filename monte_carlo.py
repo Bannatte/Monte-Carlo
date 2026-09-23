@@ -40,7 +40,7 @@ def loop(n_iter):
 
 def write(n_iter):
     data = loop(n_iter)
-    with opne("output.txt", "w", encoding="utf-8") as file:
+    with open("output.txt", "w", encoding="utf-8") as file:
         for key in sorted(data.keys()):
             file.write(f"{key}: {data[key]}\n")
 
