@@ -4,7 +4,7 @@ def prob_A(p: int):
     if 0 <= p <= 73:
         return 0.006
     elif p <= 89:
-        return 0.008 + 0.06 * (p - 73)
+        return 0.006 + 0.06 * (p - 73)
     elif p == 90:
         return 1
     else:
@@ -13,7 +13,7 @@ def prob_A(p: int):
 def run():
     pity_flag = False
     c = 0
-    n = 0
+    n = 1
 
     while True:
         if prob_A(n) < random():
@@ -27,7 +27,7 @@ def run():
             n += 1
 
 def loop(n_iter):
-    d = {}
+    d = dict()
 
     for _ in range(n_iter):
         n = run()
