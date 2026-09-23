@@ -38,4 +38,8 @@ def loop(n_iter):
     
     return d
 
-print(loop(10000))
+def write(n_iter):
+    data = loop(n_iter)
+    with opne("output.txt", "w", encoding="utf-8") as file:
+        for key in sorted(data.keys()):
+            file.write(f"{key}: {data[key]}\n")
