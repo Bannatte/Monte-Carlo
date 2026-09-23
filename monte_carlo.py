@@ -1,7 +1,7 @@
 from random import random
 
 def prob_A(p: int):
-    if 0 <= p <= 73:
+    if 0 < p <= 73:
         return 0.006
     elif p <= 89:
         return 0.006 + 0.06 * (p - 73)
