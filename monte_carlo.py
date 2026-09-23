@@ -30,12 +30,12 @@ def loop(n_iter):
     d = dict()
 
     for _ in range(n_iter):
-        n = run()
-        if n in d.keys():
-            d[n] += 1
+        i = run()
+        if i in d.keys():
+            d[i] += 1
         else:
-            d[n] = 1
+            d[i] = 1
     
-    return sorted(d.keys())
+    return d
 
-print(loop(10_000))
+print(loop(10000))
