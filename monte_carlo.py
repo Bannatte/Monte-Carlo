@@ -16,7 +16,7 @@ def run():
     n = 1
 
     while True:
-        if prob_A(n) < random():
+        if random() < prob_A(n):
             if (random() < 0.5) or pity_flag:
                 return n + c
             else:
