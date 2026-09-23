@@ -1,16 +1,26 @@
 from random import random
 
-def prob_A(p: int):
-    if 0 < p <= 73:
+def prob_char(p: int):
+    if p <= 0:
+        return 0
+    elif p <= 73:
         return 0.006
     elif p <= 89:
         return 0.006 + 0.06 * (p - 73)
-    elif p == 90:
-        return 1
     else:
-        return 0
+        return 1
 
-def run():
+def prob_weap(p: int):
+    if p <= 0:
+        return 0
+    elif p <= 62:
+        return 0.007
+    elif p <= 76:
+        return 0.007 + 0.07 * (p - 62)
+    else:
+        return 1
+
+def run_char():
     pity_flag = False
     c = 0
     n = 1
@@ -25,6 +35,9 @@ def run():
                 pity_flag = True
         else:
             n += 1
+
+def run_weap():
+    
 
 def loop(n_iter):
     d = dict()
