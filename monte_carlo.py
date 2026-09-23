@@ -3,9 +3,9 @@ from random import random
 def prob_A(p: int):
     if 0 <= p <= 73:
         return 0.006
-    else if p <= 89:
+    elif p <= 89:
         return 0.008 + 0.06 * (p - 73)
-    else if p == 90:
+    elif p == 90:
         return 1
     else:
         return 0
