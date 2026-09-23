@@ -53,5 +53,3 @@ def write():
     with open("output.txt", "w", encoding="utf-8") as file:
         for key in sorted(data.keys()):
             file.write(f"{key}: {data[key]}\n")
-
-write(1_000_000)
