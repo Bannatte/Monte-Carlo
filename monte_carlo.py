@@ -1,5 +1,11 @@
 from random import random
 
+NUM_ITER = 1_000_000
+
+# C6R5
+CONS = 6 # from 0 to 6
+REFI = 5 # from 0 to 5
+
 def prob(p: int):
     if p <= 0:
         return 0
@@ -26,11 +32,15 @@ def run():
         else:
             n += 1
 
-def loop(n_iter):
+def loop():
     d = dict()
 
-    for _ in range(n_iter):
-        i = run() + run() + run() + run() + run() + run() + run() + run() + run() + run() + run() + run()
+    for _ in range(NUM_ITER):
+        
+        i = 0
+        for _ in range(CONS + REFI + 1):
+            i += run()
+            
         if i in d.keys():
             d[i] += 1
         else:
@@ -38,8 +48,8 @@ def loop(n_iter):
     
     return d
 
-def write(n_iter):
-    data = loop(n_iter)
+def write():
+    data = loop()
     with open("output.txt", "w", encoding="utf-8") as file:
         for key in sorted(data.keys()):
             file.write(f"{key}: {data[key]}\n")
